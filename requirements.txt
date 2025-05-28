@@ -1,0 +1,5 @@
+Flask
+boto3
+serverless_wsgi
+werkzeug
+python-dotenv

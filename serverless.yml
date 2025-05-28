@@ -1,0 +1,27 @@
+service: flask-lambda-service
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1  # You can specify your desired region
+
+functions:
+  app:
+    handler: handler.lambda_handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
+  - serverless-offline
+
+custom:
+  wsgi:
+    app: app.main.app
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: non-linux
+    zip: true
