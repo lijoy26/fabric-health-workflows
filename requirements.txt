@@ -3,3 +3,8 @@ boto3
 serverless_wsgi
 werkzeug
 python-dotenv
+flask-wtf
+boto3
+psycopg2-binary
+flask_sqlalchemy
+flask-migrate
